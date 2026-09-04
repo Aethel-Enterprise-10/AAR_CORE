@@ -1,0 +1,66 @@
+import sqlite3, os, subprocess
+
+def find_db(filename="patterns_v2.db"):
+    candidates = [
+        os.path.expanduser(f"~/{filename}"),
+        os.path.expanduser(f"~/SHOGUN_OS/08_INTELLIGENCE/{filename}"),
+        os.path.expanduser(f"~/systems/shogun/{filename}"),
+    ]
+    for c in candidates:
+        if os.path.exists(c) and os.path.getsize(c) > 0:
+            return c
+    result = subprocess.run(["find", os.path.expanduser("~"), "-name", filename, "-size", "+0"],
+                             capture_output=True, text=True, timeout=30)
+    found = [l for l in result.stdout.strip().split("\n") if l]
+    return found[0] if found else None
+
+def load_real_outcomes(db_path, limit=500, canonical_id=None):
+    """Pulls real rows from `outcomes`. Normalizes `success` to win/loss.
+    Keeps decision_id and canonical_id so trust updates are traceable
+    back to the branch that produced the prediction -- this is the
+    decision->outcome attribution your notes flag as unresolved."""
+    conn = sqlite3.connect(db_path)
+    conn.row_factory = sqlite3.Row
+    cur = conn.cursor()
+    q = "SELECT id, timestamp, canonical_id, dna_key, action, reward, pnl, success, confidence, trust, regime, decision_id FROM outcomes"
+    params = ()
+    if canonical_id:
+        q += " WHERE canonical_id = ?"
+        params = (canonical_id,)
+    q += " ORDER BY id ASC LIMIT ?"
+    cur.execute(q, params + (limit,))
+    rows = cur.fetchall()
+    conn.close()
+
+    normalized = []
+    for r in rows:
+        s = r["success"]
+        if s is not None:
+            outcome = "win" if s in (1, "1", True, "True", "win") else "loss"
+        elif r["reward"] is not None:
+            outcome = "win" if r["reward"] > 0 else "loss"
+        else:
+            outcome = "loss"
+        normalized.append({
+            "outcome": outcome,
+            "reward": r["reward"],
+            "pnl": r["pnl"],
+            "canonical_id": r["canonical_id"],
+            "decision_id": r["decision_id"],
+            "timestamp": r["timestamp"],
+        })
+    return normalized
+
+if __name__ == "__main__":
+    db = find_db()
+    if db is None:
+        print("patterns_v2.db not found"); exit(1)
+    data = load_real_outcomes(db, limit=500)
+    print(f"loaded {len(data)} real outcome rows from {db}\n")
+    print("first 5 rows:")
+    for row in data[:5]:
+        print(row)
+    wins = sum(1 for d in data if d["outcome"] == "win")
+    null_decision_ids = sum(1 for d in data if d["decision_id"] is None)
+    print(f"\nreal win rate: {wins}/{len(data)} = {wins/len(data):.3f}")
+    print(f"rows with NULL decision_id: {null_decision_ids}/{len(data)}")

@@ -1,0 +1,14 @@
+{"price": 100, "ts": 1786104598.7495701, "type": "price_tick"}
+{"price": 101, "ts": 1786104598.7500596, "type": "price_tick"}
+{"price": 102, "ts": 1786104598.7502668, "type": "price_tick"}
+{"price": 103, "ts": 1786104598.7504098, "type": "price_tick"}
+{"price": 104, "ts": 1786104598.75053, "type": "price_tick"}
+{"batch": 1, "decision_id": "aaa12305a7201316", "genome_hash": "2516bf5c160e20d9a3f0cd445a46caa7d3ebdc7ac0dfb8f377a20ff1b921ef43", "log_hash": "ba58ed7aa012777f73f36925715654fa0b5cbcc3a0ac0389f7b860b6b98b56ea", "ts": "2026-08-07T12:10:20.022398+00:00", "type": "batch_result"}
+{"batch": 2, "decision_id": "0fba5e438d9fbd8e", "genome_hash": "2516bf5c160e20d9a3f0cd445a46caa7d3ebdc7ac0dfb8f377a20ff1b921ef43", "log_hash": "b607dd1769e4554cb10cc5a32aa5df6676c119ebecc810e01cd3db47eef62bdd", "ts": "2026-08-07T12:10:30.023503+00:00", "type": "batch_result"}
+{"batch": 3, "decision_id": "e6fbb7285dea0e50", "genome_hash": "2516bf5c160e20d9a3f0cd445a46caa7d3ebdc7ac0dfb8f377a20ff1b921ef43", "log_hash": "79d4c99991ffe8b939c1ca76fbf40ce8a3ddb1b6c451eee1619b756ef6622a4f", "ts": "2026-08-07T12:10:40.024762+00:00", "type": "batch_result"}
+{"batch": 4, "decision_id": "72ee0bfc58f18c97", "genome_hash": "2516bf5c160e20d9a3f0cd445a46caa7d3ebdc7ac0dfb8f377a20ff1b921ef43", "log_hash": "da8786eb2d5a13b30f717a7a8080e9e93360494a08206cee254a2d756056a5ee", "ts": "2026-08-07T12:10:50.026372+00:00", "type": "batch_result"}
+{"batch": 5, "decision_id": "d3787ea95fb4d8c1", "genome_hash": "2516bf5c160e20d9a3f0cd445a46caa7d3ebdc7ac0dfb8f377a20ff1b921ef43", "log_hash": "cb0ed94abec75f442766aae1ec835583f92c28f240d41583dbb56fe046757342", "ts": "2026-08-07T12:11:00.029118+00:00", "type": "batch_result"}
+{"batch": 6, "decision_id": "522648f5a6453014", "genome_hash": "2516bf5c160e20d9a3f0cd445a46caa7d3ebdc7ac0dfb8f377a20ff1b921ef43", "log_hash": "45bdca1fdde84c1a8295bc53ce7dace8710d2358a6d1cdece260b1f27e65cd13", "ts": "2026-08-07T12:11:10.030562+00:00", "type": "batch_result"}
+{"batch": 7, "decision_id": "9e68ede388722ba3", "genome_hash": "2516bf5c160e20d9a3f0cd445a46caa7d3ebdc7ac0dfb8f377a20ff1b921ef43", "log_hash": "79d4c99991ffe8b939c1ca76fbf40ce8a3ddb1b6c451eee1619b756ef6622a4f", "ts": "2026-08-07T12:11:20.031769+00:00", "type": "batch_result"}
+{"batch": 8, "decision_id": "d8a61ba0b3e739fa", "genome_hash": "2516bf5c160e20d9a3f0cd445a46caa7d3ebdc7ac0dfb8f377a20ff1b921ef43", "log_hash": "20b6c59e0859e40858755b963bccdca8e2914014a8a89be05dfb08d5f678c345", "ts": "2026-08-07T12:11:30.036284+00:00", "type": "batch_result"}
+{"batch": 9, "decision_id": "8dc64c9bce5a87a8", "genome_hash": "2516bf5c160e20d9a3f0cd445a46caa7d3ebdc7ac0dfb8f377a20ff1b921ef43", "log_hash": "4e61845b074d27c92c8af72de53054b07103dedd3ff7468fefef00195ba18379", "ts": "2026-08-07T12:11:40.038603+00:00", "type": "batch_result"}
