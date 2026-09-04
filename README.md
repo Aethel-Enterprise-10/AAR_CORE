@@ -1,24 +1,18 @@
-AAR_CORE
+# AAR_CORE
 
-Autonomous Agent Registry Core – registry and discovery for sovereign agents.
+> **Core attestation and recovery engine for sovereign edge nodes – verifies node integrity against the PUF root.**
 
-AAR_CORE is the core registry for autonomous agents, providing discovery, capability advertisement, and trust scoring for the Aethel swarm.
+## Role in Aethel
+This repository is a component of the Aethel ecosystem. For detailed documentation, refer to the source code and comments.
 
-Purpose
-Registry for autonomous agents and capabilities
-Discovery and routing for agent-to-agent calls
-Trust and reputation scoring via VERITY proofs
-Integration with SPARX and aethel-swarm
+## Overview
+Provides attestation and recovery services, ensuring node integrity against the PUF root.
 
-Features
-Agent registration and heartbeat
-Capability indexing and search
-Trust scoring via VERITY proofs
-SPARX-compatible API
-
-Quick Start
+## Quick Start
+```bash
 cd ~/AAR_CORE
-npm install
-node aar.js
-License
-MIT
+# See source files for build/run instructions
+```
+
+## License
+MIT – see [LICENSE](LICENSE) (if any)
