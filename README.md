@@ -22,6 +22,3 @@ npm install
 node aar.js
 License
 MIT
-
-## Verification
-Verified working. Boot: ./run.sh or python3 main.py | Verify: ls -la && git log -5 | Evidence: evidence.jsonl hash-chain (gitignored) | Remote: espnrari-dev
